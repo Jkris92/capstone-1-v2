@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+
+    <title>Charles Babbage - Full Stack Web Developer</title>
+    <!-- Font Awesome CDN for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts: Serif for headings like in screenshot, Sans for body -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&amp;family=Open+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'babbage-slate': '#606c76',
+              'babbage-dark': '#293241',
+              'babbage-footer': '#242b35',
+              'nav-dark': '#282d33'
+            },
+            fontFamily: {
+              serif: ['Merriweather', 'serif'],
+              sans: ['"Open Sans"', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    <!-- BEGIN: Custom Styles -->
+    <style data-purpose="custom-typography">
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-heading {
+        font-family: 'Merriweather', Georgia, serif;
+      }
+    </style>
+    <style data-purpose="interactive-elements">
+      /* Smooth transition for mobile menu */
+      #mobile-menu {
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      }
+    </style>
+    <!-- END: Custom Styles -->
+  </head>
+  <body class="bg-white text-gray-700 antialiased selection:bg-slate-300">
+    <!-- BEGIN: MainHeader -->
+    <header class="bg-[#2b303a] text-gray-300 sticky top-0 z-50">
+      <nav aria-label="Main Navigation" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-14 md:h-16">
+          <!-- Brand Name -->
+          <div class="flex-shrink-0">
+            <a class="text-xl md:text-2xl text-white font-medium hover:text-gray-100" href="#">Charles</a>
+          </div>
+          <!-- Desktop Navigation Links -->
+          <div class="hidden md:flex space-x-8 text-sm text-gray-300">
+            <a class="hover:text-white transition-colors duration-150" href="#home">Home</a>
+            <a class="hover:text-white transition-colors duration-150" href="#projects">Projects</a>
+            <a class="text-white font-semibold hover:text-white" href="#about">Charles</a>
+            <a class="hover:text-white transition-colors duration-150" href="#tools">Tools</a>
+            <a class="hover:text-white transition-colors duration-150" href="#contact">Contact</a>
+          </div>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button aria-expanded="false" aria-label="Toggle navigation" class="inline-flex items-center justify-center p-2 rounded-md border border-gray-600 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-400" id="menu-btn" type="button">
+              <svg class="h-6 w-6 stroke-current" fill="none" viewbox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Navigation Drawer -->
+        <div class="hidden md:hidden pb-3 pt-2 space-y-1 text-center border-t border-gray-700" id="mobile-menu">
+          <a class="block px-3 py-2 rounded-md text-base text-gray-300 hover:text-white hover:bg-gray-800" href="#home">Home</a>
+          <a class="block px-3 py-2 rounded-md text-base text-gray-300 hover:text-white hover:bg-gray-800" href="#projects">Projects</a>
+          <a class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-gray-800" href="#about">Charles</a>
+          <a class="block px-3 py-2 rounded-md text-base text-gray-300 hover:text-white hover:bg-gray-800" href="#tools">Tools</a>
+          <a class="block px-3 py-2 rounded-md text-base text-gray-300 hover:text-white hover:bg-gray-800" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <!-- END: MainHeader -->
+    <!-- BEGIN: HeroSection -->
+    <section class="bg-[#6c7784] text-white py-14 md:py-20" data-purpose="hero-profile" id="about">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-14">
+          <!-- Portrait Image -->
+          <div class="flex-shrink-0">
+            <img alt="Portrait of Charles Babbage" class="w-48 h-48 sm:w-60 sm:h-60 md:w-64 md:h-64 rounded-full object-cover object-top border-4 border-slate-400 shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1sBLdBaQk-5tctZxixoFo1qJzZo1vtn3tAHIq3V1h6bm5ceAPt1V__HbWyNnjB_rJj0l8uCNrQwxRTGb6JijOwsYCnS2GT-ZrhgDUOvY4tbBjkFtm233wSw1Wbpg_SzFoUIfH1JEM1FCaZ2ey_nOCDjs2uTh29ghOlbgkPcMAuzLLBy2_Im0pxL9K8q8e1yJvnFDT0s5peaTq0hmhUm_ymbvjnXBH5uwOnqIKbvU" />
+          </div>
+          <!-- Biography / Intro Text -->
+          <div class="text-center md:text-left max-w-xl">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading mb-2">Charles Babbage</h1>
+            <h2 class="text-lg md:text-xl font-normal text-gray-200 mb-4 font-sans tracking-wide">Full Stack Web Developer</h2>
+            <p class="text-sm md:text-base text-gray-200 leading-relaxed font-light"> Charles Babbage KH FRS (/ˈbæbɪdʒ/; 26 December 1791 – 18 October 1871) was an English polymath. A mathematician, philosopher, inventor and mechanical engineer, Babbage originated the concept of a digital programmable computer. Babbage is considered by some to be 'father of the computer'. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: HeroSection -->
+    <!-- BEGIN: ProjectsSection -->
+    <section class="py-16 md:py-24 bg-white" data-purpose="projects-list" id="projects">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Title -->
+        <h2 class="text-3xl md:text-4xl text-center font-heading text-[#293241] mb-12">My Projects</h2>
+        <!-- Card Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1: E-Commerce -->
+          <div class="border border-gray-200 rounded overflow-hidden flex flex-col bg-white shadow-sm hover:shadow-md transition-shadow">
+            <!-- Illustration Box -->
+            <div class="h-60 bg-[#eaf2fd] flex items-center justify-center p-4">
+              <svg class="w-full h-full max-h-48" fill="none" viewbox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <rect fill="#6B5B95" height="130" rx="8" width="200" x="50" y="30"></rect>
+                <rect fill="#8C79C9" height="110" rx="4" width="180" x="60" y="40"></rect>
+                <!-- Window UI Mockup -->
+                <rect fill="#A892E8" height="40" rx="3" width="45" x="70" y="50"></rect>
+                <circle cx="85" cy="65" r="8" stroke="#fff" stroke-width="2"></circle>
+                <line stroke="#fff" stroke-linecap="round" stroke-width="2" x1="91" x2="100" y1="71" y2="80"></line>
+                <rect fill="#A892E8" height="40" rx="3" width="50" x="125" y="50"></rect>
+                <path d="M142 58 L147 62 L153 58 L158 64 L137 64 Z" fill="#fff"></path>
+                <rect fill="#A892E8" height="40" rx="3" width="45" x="185" y="50"></rect>
+                <rect fill="#fff" height="10" opacity="0.8" width="10" x="195" y="58"></rect>
+                <rect fill="#fff" height="10" opacity="0.8" width="10" x="210" y="58"></rect>
+                <rect fill="#fff" height="10" opacity="0.8" width="10" x="202" y="72"></rect>
+                <rect fill="#A892E8" height="35" rx="3" width="55" x="70" y="100"></rect>
+                <rect fill="#fff" height="20" opacity="0.7" rx="2" width="35" x="80" y="108"></rect>
+                <rect fill="#3D3A4F" height="8" rx="4" width="140" x="80" y="155"></rect>
+                <polygon fill="#2B2738" points="135,163 165,163 160,180 140,180"></polygon>
+                <rect fill="#2B2738" height="5" rx="2" width="50" x="125" y="180"></rect>
+                <!-- Character Illustration -->
+                <ellipse cx="195" cy="50" fill="#FFAAA6" rx="15" ry="12"></ellipse>
+                <ellipse cx="205" cy="65" fill="#FF8B94" rx="18" ry="10"></ellipse>
+                <circle cx="175" cy="100" fill="#FED766" r="10"></circle>
+                <path d="M165 110 C165 110, 185 110, 185 145 L155 145 Z" fill="#F8B195"></path>
+                <path d="M160 120 L185 105 L200 135 L175 145 Z" fill="#E67E22"></path>
+                <!-- Shopping Basket/Cart -->
+                <rect fill="#fff" height="25" rx="2" stroke="#4A90E2" stroke-width="2" width="40" x="110" y="130"></rect>
+                <circle cx="120" cy="160" fill="#4A90E2" r="4"></circle>
+                <circle cx="140" cy="160" fill="#4A90E2" r="4"></circle>
+              </svg>
+            </div>
+            <!-- Card Body -->
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-heading text-center text-gray-800 mb-3">E Commerce</h3>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify mb-4"> E-commerce, or electronic commerce, refers to the buying and selling of goods and services online through the internet. It involves transactions between businesses, individuals, or even government agencies, and is facilitated through various digital platforms such as websites, mobile apps, social media, or marketplaces. </p>
+              </div>
+              <div class="border-t border-gray-100 pt-3">
+                <span class="text-xs text-gray-400">Last updated 3 mins ago</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2: Blog -->
+          <div class="border border-gray-200 rounded overflow-hidden flex flex-col bg-white shadow-sm hover:shadow-md transition-shadow">
+            <!-- Illustration Box -->
+            <div class="h-60 bg-[#E64C4C] relative flex flex-col items-center justify-center p-4">
+              <!-- MLA badge -->
+              <div class="absolute top-0 left-0 bg-[#004A55] text-white text-xs font-bold px-5 py-1.5 rounded-br uppercase tracking-wider"> MLA </div>
+              <!-- Browser Mockup Window -->
+              <div class="bg-white rounded-md shadow-md w-full max-w-[240px] overflow-hidden border border-gray-300">
+                <div class="bg-white border-b border-gray-300 px-3 py-1 flex items-center justify-between">
+                  <div class="flex space-x-1">
+                    <div class="w-2.5 h-2.5 rounded-full border border-gray-400"></div>
+                  </div>
+                  <div class="text-[10px] text-gray-500 font-bold">✕</div>
+                </div>
+                <div class="p-3">
+                  <div class="text-center font-bold text-gray-800 text-base mb-2 tracking-wide font-sans">BLOG</div>
+                  <div class="flex gap-2">
+                    <!-- Text lines column -->
+                    <div class="w-1/2 space-y-1.5 pt-1">
+                      <div class="h-1 bg-gray-400 rounded"></div>
+                      <div class="h-1 bg-gray-400 rounded"></div>
+                      <div class="h-1 bg-gray-400 rounded"></div>
+                      <div class="h-1 bg-gray-400 rounded"></div>
+                      <div class="h-1 bg-gray-400 rounded"></div>
+                      <div class="h-1 bg-gray-400 rounded w-2/3"></div>
+                    </div>
+                    <!-- Post cards grid -->
+                    <div class="w-1/2 grid grid-cols-2 gap-1.5">
+                      <div class="h-8 bg-[#F3B3B3] rounded-sm"></div>
+                      <div class="h-8 bg-[#E67878] rounded-sm"></div>
+                      <div class="h-8 bg-[#E67878] rounded-sm"></div>
+                      <div class="h-8 bg-[#F3B3B3] rounded-sm"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card Body -->
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-heading text-center text-gray-800 mb-3">Blog</h3>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify mb-4"> A blog (a shortened version of "weblog") is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. </p>
+              </div>
+              <div class="border-t border-gray-100 pt-3">
+                <span class="text-xs text-gray-400">Last updated 3 mins ago</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3: Online Booking System -->
+          <div class="border border-gray-200 rounded overflow-hidden flex flex-col bg-white shadow-sm hover:shadow-md transition-shadow">
+            <!-- Illustration Box Mockup -->
+            <div class="h-60 bg-[#edf3f8] overflow-hidden flex flex-col border-b border-gray-200">
+              <!-- Simulated booking site banner -->
+              <div class="bg-cover bg-center h-28 relative flex items-center justify-center p-2" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRkwm9rROL5NBmq1oqCf7bEUUgphmxleAtlzw9BPRCyKL5fwa0pmGnvPukuzJgPYTF9Nu_e-cLZJw3_Ex-mOEDwypdnT8CVQpxK1uuRBZKDSaclIDa89aeFKOY0qqcNBDG4tBwFjlcDSvrpTSMPth5DEAcZP1gvyqonYK7tmPX4PMmtiILd_YMTS59Ppw3nTTFMn_vwgbp-mwbSHYilxW-2JJU8m_VgVkI9ruq2tc');">
+                <div class="text-center text-white">
+                  <span class="text-[9px] uppercase tracking-wider block font-bold text-yellow-300">Book Cheap Flights and Hotels</span>
+                  <div class="mt-1 bg-orange-600 text-[8px] text-white px-2 py-0.5 rounded font-semibold inline-block">Search Deals</div>
+                </div>
+              </div>
+              <!-- Destination thumbnail grid simulation -->
+              <div class="p-2 grid grid-cols-4 gap-1.5 bg-gray-50 flex-1 items-center">
+                <div class="bg-gray-200 h-16 rounded overflow-hidden shadow-xs relative">
+                  <img alt="Paris" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiCcZfJFM4E_Urx75Vc5V1r_NOe-sHPD8TDBnLZefjM2zOrMjE1hqSOjb_rflIN7ZIxPToc6jCqX1A5n6fMR_LadFNM26ebtibpi7-GCYyy83Ud1h429Tx5EXiikXMExCgcZ7qxGjNwVS6Yz8hfszL48VcRpjYKS6IVnLYCsC_-iPUpEgRhHFpwrPNz-M1LB7Foie2JdYAoclrihIDG14rbFPXONTcp_qmGxnJSQ8" />
+                  <span class="absolute bottom-0 inset-x-0 bg-black/60 text-[7px] text-white text-center">Paris</span>
+                </div>
+                <div class="bg-gray-200 h-16 rounded overflow-hidden shadow-xs relative">
+                  <img alt="London" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8n1mulzFsfLRwiDs9Unv1umLLfpEmkTUKaok1I-Vv2hgJVtwbfWGbxt-O9M_o241vfRl_5W6cz6R1xDk7_qOUiq1fd1Kj3sU69QqbedJoY86KYlo6w-8NGcclXDlKmxIiTi0iTnvNfxVT8objGEnjNXsYrD1lxepKjXu__1IIIq6wKkKtesM2LoiyLQMF5BDW-NutOGMBiPUxjLybiCMdMaWjHX5yFr_eOJ9tqKA" />
+                  <span class="absolute bottom-0 inset-x-0 bg-black/60 text-[7px] text-white text-center">London</span>
+                </div>
+                <div class="bg-gray-200 h-16 rounded overflow-hidden shadow-xs relative">
+                  <img alt="Rome" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc_sUFW-U8IxFWiTPM27MYGdeYFjbeDyIAmE0fDh3fHh--ocpPF9lfsCg6iGx6azBYlW6bfHu2Xf-2GCDmPT6rpFobmB50sQSGUy0g0oIo3nf4cAZgv_f9be8sAR5cIFR3qv4spJ56shJp9oUeu4eagW14NsturDjYXWSs2Q9OcDe0d34Mt3YgXPDi3kKiG1Fi6vIwDBtnfMRSqHZvTKLQTra4ZBdG2sxIfNMDTH0" />
+                  <span class="absolute bottom-0 inset-x-0 bg-black/60 text-[7px] text-white text-center">Rome</span>
+                </div>
+                <div class="bg-gray-200 h-16 rounded overflow-hidden shadow-xs relative">
+                  <img alt="Tokyo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_6uvR75JDxoOXifIXKts1pi9DNy-oFTfuaVfzc0UmP7RLbBZVjiA2Mrpt1WajP3tmRFX8fFH7PSvwb5kQ_wUfXwXM8GSfoysKwhcLrGfCLoFfHrm1Ezx45wa5inyma9RCXYhogSIxeS2c2C_DvAopXpqPZiXJ6HoY5MicjRrJucp3xE9CnFfIDAIMew8wLFBh_42LDYu1jy33ar2YzUgxpERhANYbR_Ye4ogN2RM" />
+                  <span class="absolute bottom-0 inset-x-0 bg-black/60 text-[7px] text-white text-center">Tokyo</span>
+                </div>
+              </div>
+            </div>
+            <!-- Card Body -->
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-heading text-center text-gray-800 mb-3">Online Booking System</h3>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify mb-4"> What is an online booking system? Put simply, an online booking system is a software solution used for reservation management. </p>
+              </div>
+              <div class="border-t border-gray-100 pt-3">
+                <span class="text-xs text-gray-400">Last updated 3 mins ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: ProjectsSection -->
+    <!-- BEGIN: ToolsSection -->
+    <section class="py-16 md:py-24 bg-[#6c7784] text-white" data-purpose="technology-stack" id="tools">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Title -->
+        <h2 class="text-3xl md:text-4xl text-center font-heading mb-14">Tools</h2>
+        <!-- Tech Stack Categorized Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <!-- Category 1: Front End -->
+          <div>
+            <h3 class="text-xl md:text-2xl font-heading mb-8">Front End</h3>
+            <div class="grid grid-cols-2 gap-y-8 gap-x-4 max-w-[200px] mx-auto items-center justify-items-center">
+              <!-- HTML5 -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="HTML5">
+                <i class="fa-brands fa-html5 text-5xl md:text-6xl text-[#E34F26]"></i>
+              </div>
+              <!-- CSS3 -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="CSS3">
+                <i class="fa-brands fa-css3-alt text-5xl md:text-6xl text-[#1572B6]"></i>
+              </div>
+              <!-- Bootstrap -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="Bootstrap">
+                <i class="fa-brands fa-bootstrap text-5xl md:text-6xl text-[#7952B3]"></i>
+              </div>
+              <!-- JavaScript -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="JavaScript">
+                <i class="fa-brands fa-js-square text-5xl md:text-6xl text-[#F7DF1E]"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Category 2: MERN -->
+          <div>
+            <h3 class="text-xl md:text-2xl font-heading mb-8">MERN</h3>
+            <div class="grid grid-cols-2 gap-y-8 gap-x-4 max-w-[200px] mx-auto items-center justify-items-center">
+              <!-- MongoDB -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="MongoDB">
+                <svg class="w-12 h-12 md:w-14 md:h-14" fill="#47A248" viewbox="0 0 24 24">
+                  <path d="M17.193 9.555c-1.264-5.24-4.225-7.51-4.707-8.293a.968.968 0 0 0-.825-.462.968.968 0 0 0-.826.462c-.482.783-3.443 3.053-4.707 8.293-1.42 5.888 1.488 10.748 4.773 13.565.43.368.99.58 1.56.58.57 0 1.13-.212 1.56-.58 3.285-2.817 6.193-7.677 4.672-13.565zm-5.193 11.53c-1.41-1.39-4.22-4.9-3.41-9.92.57-3.53 2.1-5.74 3.41-7.14v17.06z"></path>
+                </svg>
+              </div>
+              <!-- Express.js -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="Express.js">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-stone-900 border border-gray-600 flex items-center justify-center text-white font-bold text-xs tracking-tighter shadow-md"> ex </div>
+              </div>
+              <!-- React -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="React">
+                <i class="fa-brands fa-react text-5xl md:text-6xl text-[#61DAFB]"></i>
+              </div>
+              <!-- Node.js -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="Node.js">
+                <i class="fa-brands fa-node text-5xl md:text-6xl text-[#339933]"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Category 3: Other Tools -->
+          <div>
+            <h3 class="text-xl md:text-2xl font-heading mb-8">Other Tools</h3>
+            <div class="grid grid-cols-2 gap-y-8 gap-x-4 max-w-[200px] mx-auto items-center justify-items-center">
+              <!-- Heroku -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="Heroku">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-[#430098] rounded-md flex items-center justify-center text-white font-bold text-2xl shadow"> H </div>
+              </div>
+              <!-- Git -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="Git">
+                <i class="fa-brands fa-git-alt text-5xl md:text-6xl text-[#F05032]"></i>
+              </div>
+              <!-- Postman -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="Postman">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#FF6C37] flex items-center justify-center shadow">
+                  <i class="fa-solid fa-paper-plane text-white text-2xl"></i>
+                </div>
+              </div>
+              <!-- Sublime Text -->
+              <div class="flex items-center justify-center hover:scale-105 transition-transform" title="Sublime Text">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-stone-900 rounded-md p-1.5 flex flex-col justify-center items-center gap-1 shadow">
+                  <div class="w-8 h-2.5 bg-[#FF9800] rounded-sm -skew-x-12"></div>
+                  <div class="w-8 h-2.5 bg-[#FF9800] rounded-sm skew-x-12"></div>
+                  <div class="w-8 h-2.5 bg-[#FF9800] rounded-sm -skew-x-12"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: ToolsSection -->
+    <!-- BEGIN: ContactSection -->
+    <section class="py-16 md:py-24 bg-white" data-purpose="contact-and-location" id="contact">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Title -->
+        <h2 class="text-3xl md:text-4xl text-center font-heading text-[#293241] mb-8">Contact</h2>
+        <!-- Social Media Icons Row -->
+        <div class="flex justify-center items-center space-x-8 md:space-x-10 mb-14 text-2xl md:text-3xl text-gray-800">
+          <a aria-label="Facebook" class="hover:text-blue-600 transition-colors" href="#">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a aria-label="LinkedIn" class="hover:text-blue-700 transition-colors" href="#">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a aria-label="GitLab" class="hover:text-orange-600 transition-colors" href="#">
+            <i class="fa-brands fa-gitlab"></i>
+          </a>
+          <a aria-label="GitHub" class="hover:text-black transition-colors" href="#">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <!-- Two-Column Layout: Visit Us & Message Us -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start">
+          <!-- Column 1: Visit Us (Map) -->
+          <div data-purpose="visit-us-map">
+            <h3 class="text-xl md:text-2xl font-heading text-center md:text-left text-[#293241] mb-6">Visit Us</h3>
+            <div class="border border-gray-300 rounded shadow-sm overflow-hidden relative">
+              <!-- Simulated Map Info Box Header -->
+              <div class="bg-white p-3 border-b border-gray-200">
+                <h4 class="font-bold text-sm text-gray-900 leading-tight">Centro Escolar University</h4>
+                <p class="text-xs text-gray-600">9 Mendiola St, San Miguel, Manila, 1008 Metro Manila, Philippines</p>
+                <div class="flex items-center space-x-1 text-xs text-gray-500 mt-1">
+                  <span class="text-amber-500 font-bold">4.3</span>
+                  <span class="text-amber-400">★★★★☆</span>
+                  <span class="text-blue-600 hover:underline cursor-pointer">(289)</span>
+                </div>
+                <a class="mt-2 inline-flex items-center space-x-1 text-xs text-blue-600 hover:underline font-semibold" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span>Open in Maps</span>
+                </a>
+              </div>
+              <!-- Map View Container -->
+              <div class="w-full h-72 sm:h-80 bg-gray-100 relative">
+                <iframe allowfullscreen="" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.026402432653!2d120.98993807584503!3d14.59756117781912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca02ca521191%3A0xc3ce7aa145a1f28b!2sCentro%20Escolar%20University!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph" title="Centro Escolar University Map Location"></iframe>
+              </div>
+            </div>
+          </div>
+          <!-- Column 2: Message Us (Form) -->
+          <div data-purpose="message-us-form">
+            <h3 class="text-xl md:text-2xl font-heading text-center md:text-left text-[#293241] mb-6">Message Us</h3>
+            <form class="space-y-4" onsubmit="event.preventDefault();">
+              <div>
+                <label class="block text-xs sm:text-sm text-gray-700 mb-1" for="fullName">Full Name</label>
+                <input class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-gray-500 focus:border-gray-500 text-sm" id="fullName" name="fullName" required="" type="text" />
+              </div>
+              <div>
+                <label class="block text-xs sm:text-sm text-gray-700 mb-1" for="emailAddress">Email Address</label>
+                <input class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-gray-500 focus:border-gray-500 text-sm" id="emailAddress" name="emailAddress" required="" type="email" />
+              </div>
+              <div>
+                <label class="block text-xs sm:text-sm text-gray-700 mb-1" for="message">Message</label>
+                <textarea class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-gray-500 focus:border-gray-500 text-sm resize-y" id="message" name="message" required="" rows="4"></textarea>
+              </div>
+              <button class="w-full py-2 px-4 border border-gray-400 rounded text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-gray-400 font-medium" type="submit"> Send </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: ContactSection -->
+    <!-- BEGIN: MainFooter -->
+    <footer class="bg-[#242b35] text-gray-400 py-6 text-center text-xs md:text-sm space-y-1.5" data-purpose="site-footer">
+      <div class="max-w-6xl mx-auto px-4">
+        <p class="text-white font-medium">Charles Babbage</p>
+        <p class="text-gray-300">Full Stack Web Developer</p>
+        <p class="text-gray-400 font-light">© All Rights Reserved 2021</p>
+      </div>
+    </footer>
+    <!-- END: MainFooter -->
+    <!-- BEGIN: InteractiveScripts -->
+    <script data-purpose="mobile-menu-toggle">
+      // Toggle mobile menu visibility
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            menuBtn.setAttribute('aria-expanded', 'true');
+          } else {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+        // Close menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    </script>
+    <!-- END: InteractiveScripts -->
+  </body>
+</html>
